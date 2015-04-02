@@ -1,0 +1,36 @@
+{"nodes":[
+  {"name":"Start of sales",
+    "year": 0,
+    "value": 80},
+  {"name":"Sales",
+    "year": 11,
+    "value": 180},
+  {"name":"50% discount for blind people",
+    "year": 5,
+    "value": 20},
+  {"name":"TV ads",
+    "year": 7,
+    "value": 20},
+  {"name":"Mail spam",
+    "year": 7,
+    "value": 20},
+  {"name":"TV ads with kittens",
+    "year": 1,
+    "value": 20},
+  {"name":"Stand with pretty girls",
+    "year": 3,
+    "value": 20},
+  {"name":"Ads in subway",
+    "year": 5,
+    "value": 20}
+
+],
+  "links":[
+    {"source":0,"target":1,"value":80},
+    {"source":2,"target":1,"value":10},
+    {"source":3,"target":1,"value":10},
+    {"source":4,"target":1,"value":5},
+    {"source":5,"target":1,"value":20},
+    {"source":6,"target":1,"value":5},
+    {"source":7,"target":1,"value":15}
+  ]}

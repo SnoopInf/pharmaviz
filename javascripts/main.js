@@ -26,16 +26,7 @@ d3.json("data/data.json", function(energy) {
         .links(energy.links)
         .layout(32);
 
-    var link = svg.append("g").selectAll(".link")
-        .data(energy.links)
-        .enter().append("path")
-        .attr("class", "link")
-        .attr("d", path)
-        .style("stroke-width", function(d) { return Math.max(1, d.dy); })
-        .sort(function(a, b) { return b.dy - a.dy; });
 
-    link.append("title")
-        .text(function(d) { return d.source.name + " → " + d.target.name + "\n" + format(d.value); });
 
     var node = svg.append("g").selectAll(".node")
         .data(energy.nodes)
@@ -54,6 +45,21 @@ d3.json("data/data.json", function(energy) {
         .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
         .append("title")
         .text(function(d) { return d.name + "\n" + format(d.value); });
+
+
+
+    var link = svg.append("g").selectAll(".link")
+        .data(energy.links)
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("d", path)
+        .style("fill", function(d) { return d3.rgb(d.source.color); })
+        .style("fill-opacity", "0.5")
+        .style("stroke-width", function(d) { return 1; /*return Math.max(1, d.dy);*/ })
+        .sort(function(a, b) { return b.dy - a.dy; });
+
+    link.append("title")
+        .text(function(d) { return d.source.name + " → " + d.target.name + "\n" + format(d.value); });
 
     node.append("text")
         .attr("x", -6)
